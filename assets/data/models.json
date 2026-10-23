@@ -1,0 +1,364 @@
+{
+ "bench-2": {
+  "name": "Лавочка 2",
+  "glb": "bench-2.glb",
+  "zip": "rb_bench_2.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-30deg 70deg 3.5m",
+  "product": "lavochka"
+ },
+ "bench-2-table": {
+  "name": "Лавочка 2 со столиком",
+  "glb": "bench-2-table.glb",
+  "zip": "rb_bench_2_table.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-30deg 70deg 3.5m",
+  "product": "lavochka-so-stolikom"
+ },
+ "bench-noname": {
+  "name": "Скамья без названия",
+  "glb": "bench-noname.glb",
+  "zip": "rb_bench_noname.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-30deg 70deg 4.25m",
+  "product": "lavochka-no-name"
+ },
+ "bench-noname-backless": {
+  "name": "Лавочка без названия",
+  "glb": "bench-noname-backless.glb",
+  "zip": "rb_bench_noname_backless.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-30deg 70deg 3.6m",
+  "product": "bench-no-name"
+ },
+ "cart": {
+  "name": "Тележка",
+  "glb": "cart.glb",
+  "zip": "rb_cart.zip",
+  "frame": 1,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-30deg 70deg 3.25m",
+  "product": "telezhka"
+ },
+ "duga-s": {
+  "name": "Дуга S",
+  "glb": "duga-s.glb",
+  "zip": "rb_chair_duga_S.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-395deg 70deg 2.1m",
+  "product": "stul-duga-s"
+ },
+ "duga-m": {
+  "name": "Дуга M",
+  "glb": "duga-m.glb",
+  "zip": "rb_chair_duga_M.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-395deg 70deg 2.35m",
+  "product": "stul-duga-m"
+ },
+ "duga-l": {
+  "name": "Дуга L",
+  "glb": "duga-l.glb",
+  "zip": "rb_chair_duga_L.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-395deg 70deg 2.85m",
+  "product": "stul-duga-l"
+ },
+ "element": {
+  "name": "Элемент",
+  "glb": "element.glb",
+  "zip": "rb_chair_element.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-35deg 70deg 2.35m",
+  "product": "stul-element"
+ },
+ "element-soft": {
+  "name": "Элемент софт",
+  "glb": "element-soft.glb",
+  "zip": "rb_chair_element_soft.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-35deg 70deg 2.35m",
+  "product": "stul-element-soft"
+ },
+ "element-arm": {
+  "name": "Элемент с подлокотниками",
+  "glb": "element-arm.glb",
+  "zip": "rb_chair_element_arm.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-35deg 70deg 2.35m",
+  "product": "stul-s-podlokotnikami-element"
+ },
+ "element-arm-soft": {
+  "name": "Элемент софт с подлокотниками",
+  "glb": "element-arm-soft.glb",
+  "zip": "rb_chair_element_arm_soft.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-35deg 70deg 2.35m",
+  "product": "stul-s-podlokotnikami-element-soft"
+ },
+ "element-bar": {
+  "name": "Элемент барный",
+  "glb": "element-bar-noarm.glb",
+  "zip": "rb_chair_element_bar.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-35deg 70deg 3.00m",
+  "product": "stul-barniy-element"
+ },
+ "element-bar-soft": {
+  "name": "Элемент софт барный",
+  "glb": "element-bar-soft.glb",
+  "zip": "rb_chair_element_bar_soft.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   1
+  ],
+  "orbit": "-35deg 70deg 3.00m",
+  "product": "stul-barniy-element-soft"
+ },
+ "element-bar-arm": {
+  "name": "Элемент с подлокотниками барный",
+  "glb": "element-bar-arm.glb",
+  "zip": "rb_chair_element_bar_arm.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-35deg 70deg 3.00m",
+  "product": "stul-barniy-s-podlokotnikami-element"
+ },
+ "element-bar-arm-soft": {
+  "name": "Элемент софт с подлокотниками барный",
+  "glb": "element-bar-arm-soft.glb",
+  "zip": "rb_chair_element_bar_arm_soft.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   1
+  ],
+  "orbit": "-35deg 70deg 3.00m",
+  "product": "stul-barniy-element-soft"
+ },
+ "element-plastic": {
+  "name": "Элемент x Repanel",
+  "glb": "element-plastic.glb",
+  "zip": "rb_chair_element_plastic.zip",
+  "frame": 2,
+  "plastic": true,
+  "fabric": [],
+  "orbit": "-35deg 70deg 2.35m",
+  "product": "element-repanel"
+ },
+ "element-bar-plastic": {
+  "name": "Элемент барный x Repanel",
+  "glb": "element-bar-plastic.glb",
+  "zip": "rb_chair_element_bar_plastic.zip",
+  "frame": 2,
+  "plastic": true,
+  "fabric": [],
+  "orbit": "-35deg 70deg 3.00m",
+  "product": "stul-barniy-element-repanel"
+ },
+ "chair-noname": {
+  "name": "Стул без названия",
+  "glb": "chair-noname.glb",
+  "zip": "rb_chair_noname.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-305deg 70deg 2.65m",
+  "product": "no-name"
+ },
+ "chair-noname-bar": {
+  "name": "Стул без названия барный",
+  "glb": "chair-noname-bar.glb",
+  "zip": "rb_chair_noname_bar.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-27deg 80deg 5.50m",
+  "product": "no-name-bar"
+ },
+ "stool-noname": {
+  "name": "Табурет без названия",
+  "glb": "stool-noname.glb",
+  "zip": "rb_stool_noname.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-30deg 70deg 1.745m",
+  "product": "stool-no-name"
+ },
+ "stool-noname-bar": {
+  "name": "Табурет без названия барный",
+  "glb": "stool-noname-bar.glb",
+  "zip": "rb_stool_noname_bar.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-35deg 70deg 2.35m",
+  "product": "no-name-bar-stool"
+ },
+ "chair-ugol": {
+  "name": "Угол",
+  "glb": "chair-ugol.glb",
+  "zip": "rb_chair_ugol.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2
+  ],
+  "orbit": "-30deg 70deg 2.65m",
+  "product": "ugol"
+ },
+ "table-6-600": {
+  "name": "Стол «6» Круг",
+  "glb": "table-6-600.glb",
+  "zip": "rb_table_6.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-15deg 70deg 2.75m",
+  "product": "stol-6"
+ },
+ "table-11-600": {
+  "name": "Стол «11» Круг",
+  "glb": "table-11-600.glb",
+  "zip": "rb_tables_6-11.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-15deg 70deg 2.75m",
+  "product": "stol-11"
+ },
+ "table-6-plastic": {
+  "name": "Стол «6» Круг x Repanel",
+  "glb": "table-6-plastic.glb",
+  "zip": "rb_table_6_plastic.zip",
+  "frame": 2,
+  "plastic": true,
+  "fabric": [],
+  "orbit": "-15deg 70deg 2.75m",
+  "product": "stol-6-repanel"
+ },
+ "table-coffee": {
+  "name": "Журнальный столик",
+  "glb": "table-coffee.glb",
+  "zip": "rb_table_coffee.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-15deg 75deg 2.75m",
+  "product": "stol-zhurnalnyy"
+ },
+ "table-coffee-rectangle": {
+  "name": "Кофейный столик прямоугольный",
+  "glb": "coffeetable-solid-rectangle.glb",
+  "zip": "rb_coffeetable_solid_rectangle.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "30deg 70deg 2.00m",
+  "product": "stol-kofeynyy"
+ },
+ "table-coffee-square": {
+  "name": "Кофейный столик квадратный",
+  "glb": "coffeetable-solid-square.glb",
+  "zip": "rb_coffeetable_solid_square.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "30deg 70deg 2.75m",
+  "product": "stol-kofeynyy-kvadratnyy"
+ },
+ "table-coffee-susp-circle": {
+  "name": "Круглый столик подвесной",
+  "glb": "coffeetable_susp_circle.glb",
+  "zip": "rb_coffeetable_susp_circle.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-50deg 70deg 2.7m",
+  "product": "stol-podvesnoy-kruglyy"
+ },
+ "table-coffee-susp-rect": {
+  "name": "Прямоугольный столик подвесной",
+  "glb": "coffeetable_susp_rect.glb",
+  "zip": "rb_coffeetable_susp_rect.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-50deg 70deg 2.7m",
+  "product": "stol-podvesnoy-kvadratnyy"
+ },
+ "table-tripod": {
+  "name": "Стол на трёх ножках",
+  "glb": "table-tripod.glb",
+  "zip": "rb_table_tripod.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "-15deg 70deg 2.75m",
+  "product": "stol-na-trekh-nozhkakh"
+ },
+ "tumbochka": {
+  "name": "Тумбочка",
+  "glb": "tumbochka.glb",
+  "zip": "rb_tumbochka.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [],
+  "orbit": "0deg 70deg 2.00m",
+  "product": "tumbochka"
+ },
+ "vasily-rug": {
+  "name": "Василий ковёр",
+  "glb": "vasily-rug.glb",
+  "zip": "rb_vasily_rug.zip",
+  "frame": 0,
+  "plastic": false,
+  "fabric": [
+   2,
+   3,
+   4
+  ],
+  "orbit": "-395deg 70deg 2.5m",
+  "product": "kreslo-vasiliy"
+ }
+}
