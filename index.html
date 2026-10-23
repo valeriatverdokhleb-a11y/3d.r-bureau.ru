@@ -1,239 +1,716 @@
 <!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>3D каталог моделей r-bureau</title>
-    <meta
-      name="description"
-      content="Коллекция 3D моделей r-bureau: превью, скачивание и просмотр в 3D/AR."
-    />
+<html lang="ru" class="tN cB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D-модели и чертежи — Румянцев Бюро</title>
+<meta name="description" content="Бесплатные 3D-модели мебели Румянцев Бюро: FBX, OBJ, 3DS, DWG, 3ds Max. Просмотр в 3D и AR.">
+<link rel="icon" href="assets/img/favicon.ico">
+<style>@font-face{font-family:"PN";src:url(https://static.tildacdn.com/tild3761-6365-4164-b464-303732303965/proxima-nova-regular.woff) format("woff");font-weight:400}@font-face{font-family:"PN";src:url(https://static.tildacdn.com/tild3136-3264-4261-b463-613633623566/proxima-nova-semibol.woff) format("woff");font-weight:500 600}@font-face{font-family:"PN";src:url(https://static.tildacdn.com/tild3066-3336-4232-b330-336436376366/proxima-nova-bold.woff) format("woff");font-weight:700}@font-face{font-family:"PNCo";src:url(https://static.tildacdn.com/tild3331-3631-4563-b666-393138373739/proxima-nova-condens.woff) format("woff");font-weight:500 600}@font-face{font-family:"PNCo";src:url(https://static.tildacdn.com/tild3534-6164-4730-b665-303230333937/proxima-nova-condens.woff) format("woff");font-weight:700}
+/* Шрифты: Medium (500) пока подменён Semibold, Compressed — Extra Condensed. Нужны файлы Medium и Compressed. */
 
-    <meta property="og:title" content="3D каталог моделей r-bureau" />
-    <meta
-      property="og:description"
-      content="Превью, скачивание и просмотр в 3D/AR."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="bench-2/preview.jpg" />
 
-    <link
-      rel="shortcut icon"
-      href="assets/img/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Literata:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/catalog.css" />
-  </head>
-  <body class="catalog">
-    <div class="bg" aria-hidden="true">
-      <div class="bg__grid"></div>
-      <div class="bg__blob bg__blob--a"></div>
-      <div class="bg__blob bg__blob--b"></div>
-    </div>
 
-    <header class="top">
-      <div class="wrap">
-        <a class="brand" href="./" aria-label="На главную">
-          <img
-            class="brand__logo"
-            src="assets/img/rb_logo.svg"
-            alt="r-bureau"
-          />
-          <span class="brand__text">/ 3D</span>
-        </a>
-        <nav class="top__actions">
-          <a
-            class="btn btn--ghost"
-            href="https://r-bureau.ru/"
-            target="_blank"
-            rel="noreferrer"
-            >r-bureau.ru</a
-          >
-          <a
-            class="btn btn--primary"
-            href="https://github.com/streletskiy/3d.r-bureau.ru/releases/latest/download/r-bureau-3d-all.zip"
-            download
-            >Скачать все</a
-          >
-        </nav>
-      </div>
-    </header>
 
-    <main class="wrap">
-      <section class="controls" id="catalog" aria-label="Фильтры">
-        <div class="controls__row">
-          <div class="controls__stats" aria-label="Статистика">
-            <div class="pill">
-              <span class="pill__k">Моделей</span>
-              <span class="pill__v" id="stat-count">…</span>
-            </div>
-            <div class="pill">
-              <span class="pill__k">Обновлено</span>
-              <span class="pill__v" id="stat-updated">…</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="controls__row">
-          <label class="search" for="q">
-            <span class="search__icon" aria-hidden="true"></span>
-            <input
-              id="q"
-              name="q"
-              type="search"
-              placeholder="Поиск по названию…"
-              autocomplete="off"
-              spellcheck="false"
-            />
-          </label>
-        </div>
 
-        <div class="chips" id="chips" role="tablist" aria-label="Категории">
-          <button
-            class="chip is-active"
-            type="button"
-            data-category="all"
-            role="tab"
-            aria-selected="true"
-          >
-            Все
-          </button>
-          <button
-            class="chip"
-            type="button"
-            data-category="chairs"
-            role="tab"
-            aria-selected="false"
-          >
-            Стулья
-          </button>
-          <button
-            class="chip"
-            type="button"
-            data-category="tables"
-            role="tab"
-            aria-selected="false"
-          >
-            Столы
-          </button>
-          <button
-            class="chip"
-            type="button"
-            data-category="benches"
-            role="tab"
-            aria-selected="false"
-          >
-            Лавочки
-          </button>
-          <button
-            class="chip"
-            type="button"
-            data-category="storage"
-            role="tab"
-            aria-selected="false"
-          >
-            Хранение
-          </button>
-          <button
-            class="chip"
-            type="button"
-            data-category="other"
-            role="tab"
-            aria-selected="false"
-          >
-            Другое
-          </button>
-        </div>
-      </section>
 
-      <section class="grid" aria-label="Сетка моделей">
-        <div class="grid__head">
-          <div class="grid__title">Модели</div>
-          <div class="grid__hint" id="grid-hint">Загрузка…</div>
-        </div>
-        <div class="cards" id="cards" aria-live="polite"></div>
-      </section>
 
-      <footer class="foot">
-        <div class="foot__left">
-          <div class="foot__title">r-bureau · 3D каталог</div>
-          <div class="foot__sub">
-            Страница генерируется из таблицы в <code>README.md</code>.
-          </div>
-        </div>
-        <div class="foot__right">
-          <a class="link" href="README.md">README</a>
-          <a
-            class="link"
-            href="https://github.com/streletskiy/3d.r-bureau.ru/releases/latest/download/r-bureau-3d-all.zip"
-            download
-            >Скачать все</a
-          >
-          <a
-            class="link"
-            href="https://r-bureau.ru/"
-            target="_blank"
-            rel="noreferrer"
-            >r-bureau.ru</a
-          >
-        </div>
-      </footer>
-    </main>
 
-    <template id="card-tpl">
-      <article class="card">
-        <a class="card__thumb" data-role="view" href="#">
-          <img data-role="img" alt="" loading="lazy" decoding="async" />
-          <div class="card__shade" aria-hidden="true"></div>
-        </a>
-        <div class="card__body">
-          <div class="card__titleRow">
-            <a class="card__title" data-role="viewTitle" href="#"></a>
-          </div>
-          <div class="card__descr" data-role="descr"></div>
-          <div
-            class="card__formats"
-            data-role="formats"
-            aria-label="Доступные форматы"
-          ></div>
-          <div class="card__actions">
-            <a class="btn btn--small btn--primary" data-role="viewBtn" href="#"
-              >3D/AR</a
-            >
-            <a
-              class="btn btn--small btn--ghost"
-              data-role="downloadBtn"
-              href="#"
-              download
-              >Скачать</a
-            >
-            <a
-              class="btn btn--small btn--ghost"
-              data-role="externalBtn"
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              >Страница в магазине</a
-            >
-            <a
-              class="btn btn--small btn--ghost"
-              data-role="dddBtn"
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              >3ddd</a
-            >
-          </div>
-        </div>
-      </article>
-    </template>
 
-    <script src="assets/js/catalog.js"></script>
-  </body>
+/* ===== СИСТЕМА (см. Система.html) ===== */
+:root{--ink:#1c1a1b;--ink-2:#6e6b68;--grey:#6e6b68;--line:#d9d7d2;--fill:#f2f1ee;--w:#fff;
+      --page:20px;--cell:20px;--sec:160px;--head:40px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PN",Arial,sans-serif;font-weight:500;background:var(--w);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;cursor:pointer}
+img{display:block}
+.t-h1{font:700 64px/1 "PN";letter-spacing:-.03em}
+.t-h2{font:700 40px/1.05 "PN";letter-spacing:-.02em}
+.t-num{font:700 92px/.9 "PNC";letter-spacing:-.01em;white-space:nowrap}
+.t-lead{font:500 22px/1.35 "PN"}
+.t-h3{font:700 18px/1.25 "PN"}
+.t-body{font:500 16px/1.45 "PN";color:var(--ink-2)}
+.t-btn{font:600 16px/1 "PN"}
+.t-cap{font:700 12px/1.3 "PN";text-transform:uppercase;letter-spacing:.06em}
+.t-low{font:600 13px/1.3 "PN";text-transform:lowercase}
+.t-it{font:italic 500 16px/1.45 "PN";color:var(--grey)}
+
+/* кнопки: два варианта, переключатель внизу слева */
+.btn{display:inline-flex;justify-content:space-between;align-items:center;gap:32px;height:44px;padding:0 16px;transition:background .15s,color .15s,border-color .15s;cursor:pointer;font:600 16px/1 "PN"}
+body.bA .btn{background:var(--ink);color:var(--w);border:1px solid var(--ink)}
+body.bA .btn:hover,body.bA .cell:hover .btn{background:var(--w);color:var(--ink)}
+
+/* клетки: серая линия, при наведении ячейка обводится чёрным (как у Acme) */
+.cells{display:grid;border-top:1px solid var(--line)}
+.cell{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cell:last-child{border-right:0}
+.cell::after{content:"";position:absolute;inset:-1px;border:1px solid var(--ink);opacity:0;pointer-events:none;transition:opacity .15s;z-index:3}
+.cell:hover::after{opacity:1}
+
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:var(--sec) var(--page) var(--head)}
+
+/* ===== 0. Первый экран ===== */
+.hero{position:relative;height:calc(100vh - var(--mh,150px));min-height:560px;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 72%}
+.hero .logo{position:absolute;left:var(--page);right:var(--page);top:36px;z-index:2}
+.hero .logo img{width:100%}
+.hero .slogan,.hero .cart{position:absolute;top:calc(36px + (100vw - 2 * var(--page)) * .0556 + 34px);z-index:2;color:var(--w);font:700 22px/1.1 "PN";text-transform:uppercase}
+.hero .slogan{left:var(--page)}.hero .cart{right:var(--page)}
+.menu{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:18px var(--page) 22px;border-bottom:1px solid var(--line)}
+.menu div{display:flex;flex-direction:column;gap:2px}
+.menu .ms{display:flex;flex-direction:row;gap:14px}
+.menu a:hover,.foot a:hover{opacity:.5}
+
+/* ===== 1. О бюро ===== */
+.about{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:var(--sec) var(--page) 0}
+.about>.t-h1{grid-column:1/3}.about>div{grid-column:4/6}
+.about .t-lead+.t-lead{margin-top:1em}
+
+/* ===== 2. С чего начнём ===== */
+.start .cell{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:center;padding:28px var(--page);border-right:0}
+.start .t-h2{grid-column:1/3}
+.start .t-body{grid-column:3/5}
+.start .cell img{position:absolute;left:0;top:0;width:200px;height:auto;transform:translate(var(--x,0),var(--y,0)) scale(.96);opacity:0;pointer-events:none;transition:opacity .2s;z-index:4;will-change:transform}
+.start .cell:hover img{opacity:1}
+.start .t-body{max-width:420px}
+.start .btn{grid-column:5;justify-self:end;width:220px}
+
+/* ===== 3. Разделы каталога: как у Acme — контуры на белом, при наведении цвет и название поверх ===== */
+.cat{position:relative;display:grid;grid-template-columns:.59fr 1.07fr .57fr .83fr;gap:4vw;padding:0 calc(var(--page) + 2vw);--H:min(26vw,56vh);height:100vh;height:100svh;align-content:center;align-items:end}
+.cat a{position:relative;height:var(--H)}
+/* высота предмета = реальная высота / 950 мм (тележка) */
+.cat img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:calc(var(--H) * var(--k));width:auto;max-width:none;transition:opacity .3s}
+.cat .ph{opacity:0}
+.cat a:hover .ph{opacity:1}
+.cat a:hover .ln{opacity:0}
+.cat .nm{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font:700 clamp(80px,11vw,170px)/1 "PN";letter-spacing:-.03em;text-transform:uppercase;pointer-events:none;opacity:0;transition:opacity .2s;z-index:5}
+.cat .nm.on{opacity:1}
+.cat .nm sup{font:700 18px/1 "PN";letter-spacing:0;vertical-align:top;position:relative;top:.5em;margin-left:10px}
+/* ===== 3а. Любой RAL: бегущая строка ===== */
+.ralb .ralt{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:0 var(--page) 40px}
+.ralb .ralt p{grid-column:3/5}
+.ralb .run{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ralb .run{cursor:grab;touch-action:pan-y;user-select:none}.ralb .run:active{cursor:grabbing}
+.ralb .track{display:flex;width:max-content;will-change:transform}
+.ralb .rc{position:relative;width:calc((100vw - 2 * var(--page)) / 5 + 4.8px);height:260px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.ralb .rc .tag{position:absolute;left:12px;top:12px;border:1px solid var(--line);padding:2px 6px;font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase}
+.ralb .rc i{width:110px;height:110px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.ralb .rc .nm{position:absolute;right:12px;bottom:12px;font:600 12px/16px "PN";letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+/* ===== 7. Новость — раскладка Acme: дата + текст · товар · видео ===== */
+.news1{display:grid;grid-template-columns:31fr 31fr 38fr;grid-template-rows:minmax(0,1fr);height:680px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.news1>div{border-right:1px solid var(--line);min-width:0}.news1>div:last-child{border-right:0}
+.news1 .nt{display:flex;flex-direction:column;gap:20px;padding:28px var(--page)}
+.news1 .nd{font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase}
+.news1 .nx{display:flex;flex-direction:column;align-items:flex-start;gap:28px;padding-top:2px}
+.news1 .np .btn{width:100%;white-space:nowrap;margin-top:20px}
+.news1 .nx .t-body{max-width:380px}
+.news1 .np{display:flex;flex-direction:column;padding:28px 26px}
+.news1 .nh{font:600 24px/28px "PN";letter-spacing:-.01em;text-transform:uppercase;max-width:420px}
+.news1 .ns{margin-top:8px}
+.news1 .np img{flex:1;min-height:0;width:100%;object-fit:contain;padding:20px 4% 0}
+.news1 .nv{position:relative;overflow:hidden}
+.news1 .nv video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* ===== 4. Серийка: конструктор с 3D (перенесён из «Серийка — меню 14.10.html») ===== */
+#cfg2{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);border-bottom:1px solid var(--line);--red:var(--acc,#c12c2f)}
+#cfg2 .stage{border-right:1px solid var(--line);padding:var(--cell);display:flex;flex-direction:column;min-height:640px}
+#cfg2 .view{flex:1;min-width:0;background:#f4f4f3;position:relative;min-height:520px;cursor:grab;overflow:hidden}
+#cfg2 .view:active{cursor:grabbing}
+#cfg2 .view canvas{position:absolute;inset:0;width:100%!important;height:100%!important;display:block}
+#cfg2 .view .zl{z-index:2;position:absolute;left:12px;top:10px;display:flex;align-items:center;gap:8px;font:600 15px/16px "PNCo";color:var(--grey);text-transform:uppercase;letter-spacing:.04em}
+#cfg2 .view .zl u{width:14px;height:14px;background:#e3e1dc;border:1px solid #d2d0ca}
+#cfg2 .view i{z-index:2;position:absolute;right:12px;bottom:10px;font:600 15px/16px "PNCo";color:var(--grey);font-style:normal;text-transform:uppercase;letter-spacing:.04em}
+#cfg2 .panel{display:flex;flex-direction:column}
+#cfg2 .grp{border-bottom:1px solid var(--line);position:relative}
+#cfg2 .grp.open{outline:1px solid var(--ink);outline-offset:-1px;margin-top:-1px;z-index:1}
+#cfg2 .gh{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:0 var(--cell);border:0;background:none;cursor:pointer;text-align:left;color:var(--ink)}
+#cfg2 .gh .t-cap{font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+#cfg2 .gh b{margin-left:auto;font:600 15px/16px "PNCo";color:var(--grey);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#cfg2 .gh i{flex:none;position:relative;width:12px;height:12px}
+#cfg2 .gh i::before,#cfg2 .gh i::after{content:"";position:absolute;left:0;top:5.25px;width:12px;height:1.5px;background:var(--ink);transition:transform .2s}
+#cfg2 .gh i::after{transform:rotate(90deg)}
+#cfg2 .grp.open .gh i::after{transform:rotate(0)}
+#cfg2 .gh:hover .t-cap{color:var(--red)}
+#cfg2 .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+#cfg2 .body>div{overflow:hidden}
+#cfg2 .grp.open .body{grid-template-rows:1fr}
+#cfg2 .grp.open .body>div{padding-bottom:8px}
+#cfg2 .row{display:grid;grid-template-columns:160px 1fr;align-items:center;min-height:48px;margin:0 var(--cell);border-top:1px solid var(--line)}
+/* количество стульев: кнопки; недоступные при этом размере столешницы — серые */
+#cfg2 .cnt{display:flex;gap:6px;padding:8px 0}
+#cfg2 .cnt button{width:40px;height:32px;border:1px solid var(--line);background:none;font:600 15px/16px "PNCo";color:var(--ink);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+#cfg2 .cnt button:hover:not(.off){border-color:var(--ink)}
+#cfg2 .cnt{position:relative}   /* подсказка выравнивается по ряду кнопок, а не по кнопке — иначе уезжает за левый край */
+#cfg2 .cnt button.on{background:var(--ink);color:var(--w);border-color:var(--ink)}
+#cfg2 .cnt button.off{color:#c4c2bd;background:var(--fill);cursor:default}
+/* подсказка у недоступного количества: от какого размера стола оно подходит */
+#cfg2 .cnt button.off:hover::after{content:attr(data-tip);position:absolute;left:0;top:calc(100% - 2px);z-index:5;width:max-content;max-width:100%;white-space:normal;padding:6px 8px;background:var(--grey);color:var(--w);font:600 13px/16px "PN";text-transform:none;letter-spacing:0;pointer-events:none}
+#cfg2 .row:first-of-type{border-top:0}
+#cfg2 .row[hidden]{display:none}
+#cfg2 .row>label{font:600 12px/16px "PN";text-transform:uppercase;letter-spacing:.06em;color:var(--grey)}
+#cfg2 .sel{position:relative;display:flex;align-items:center;gap:10px}
+#cfg2 .sel select,#cfg2 .sel input{appearance:none;-webkit-appearance:none;width:100%;height:48px;border:0;background:none;font:600 16px "PN";color:var(--ink);cursor:pointer;outline:none;padding-right:24px}
+#cfg2 .sel input{cursor:text}
+#cfg2 .sel input::placeholder{color:var(--grey)}
+#cfg2 .sel::after{content:"";position:absolute;right:2px;top:50%;width:7px;height:7px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+#cfg2 .sel.in::after{display:none}
+#cfg2 .sel.in{flex-direction:column;align-items:stretch}
+#cfg2 .ral-x{display:block;font:600 13px/18px "PN";color:var(--acc);padding-bottom:12px}
+#cfg2 .ral-x[hidden]{display:none}
+#cfg2 .ral-x a{color:inherit;text-decoration:underline;cursor:pointer}
+#cfg2 .num .num-n{flex-basis:100%;font:600 13px/18px "PN";color:var(--acc);padding-bottom:12px}
+#cfg2 .num .num-n[hidden]{display:none}
+#cfg2 .num .num-r{margin-left:auto;font:600 13px "PN";color:var(--grey)}   /* допустимые размеры модели */
+#cfg2 .num{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px;min-height:48px;line-height:48px}
+#cfg2 .num input{width:4.2ch;height:48px;border:0;background:none;font:600 16px "PN";color:var(--ink);outline:none}
+#cfg2 .num span{font:600 16px "PN"}
+#cfg2 .row:hover .sel select{color:var(--red)}
+#cfg2 .rng{padding:12px 0 6px}
+#cfg2 .rng label{display:flex;justify-content:space-between;font:600 12px/16px "PN";color:var(--grey);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+#cfg2 .rng input{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:5px;margin:0 0 14px;outline:none;cursor:pointer}
+#cfg2 .rng input::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+#cfg2 .rng input::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:1.5px solid var(--ink)}
+#cfg2 .sw{display:flex;flex-wrap:wrap;gap:8px;padding:10px 0}
+#cfg2 .sw a{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);cursor:pointer;background-size:cover}
+#cfg2 .sw a:hover{outline:1px solid var(--grey);outline-offset:2px}
+#cfg2 .sw a.on{outline:1.5px solid var(--ink);outline-offset:2px}
+#cfg2 .sw-n{display:block;font:600 12px/16px "PN";color:var(--grey);text-transform:uppercase;letter-spacing:.06em;padding-bottom:10px}
+#cfg2 .dot{flex:none;width:18px;height:18px;border-radius:50%;border:1px solid var(--line);background-size:cover}
+@media (max-width:900px){#cfg2{grid-template-columns:minmax(0,1fr)}#cfg2 .stage{border-right:0;border-bottom:1px solid var(--line);min-height:auto}#cfg2 .view{aspect-ratio:1/1;min-height:0;flex:none}#cfg2 .row{grid-template-columns:120px 1fr}}
+
+/* ===== 5. Как мы работаем ===== */
+.how{grid-template-columns:repeat(4,1fr)}
+.how .cell{padding:var(--cell) var(--cell) 28px}
+.how .t-h3{margin-top:28px}.how .t-body{margin-top:8px}
+
+/* ===== 6. Проекты и клиенты ===== */
+.prj{display:grid;grid-template-columns:repeat(7,1fr)}
+.prj .cell:nth-child(7n){border-right:0}
+.prj .cell .t-cap{text-transform:none;letter-spacing:0;font-size:13px;color:var(--grey)}
+.prj .cell{padding:12px;display:flex;flex-direction:column;gap:6px}
+.prj .cell img{margin-bottom:6px}
+.prj .cell img,.prj .cell i{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--fill)}
+.sub-head{padding:48px var(--page) var(--head)}
+.logos{grid-template-columns:repeat(6,1fr)}
+.logos .cell{height:110px;display:flex;align-items:center;justify-content:center;color:#b5b2ad}
+
+/* ===== 7. Новости ===== */
+.news{grid-template-columns:repeat(3,1fr)}
+.news .cell{padding:var(--cell) var(--cell) 28px}
+.news i{display:block;aspect-ratio:4/3;background:var(--fill);margin-bottom:18px}
+.news .t-cap{color:var(--grey)}
+.news .t-h3{margin-top:6px}.news .t-body{margin-top:6px}
+
+/* ===== 8. Форма ===== */
+.form{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:var(--sec);padding:0 var(--page) var(--sec);border-bottom:1px solid var(--line)}   /* как «О бюро»: заголовок — колонки 1–2, форма — 4–5 */
+.form>.t-h1{grid-column:1/4}
+.form form{grid-column:4/6;display:flex;flex-direction:column;gap:28px;max-width:100%}
+.form label{display:block;border-bottom:1px solid var(--ink);padding-bottom:10px}
+.form input,.form textarea{display:block;width:100%;border:0;outline:none;background:none;margin-top:8px;font:500 18px/1.4 "PN";color:var(--ink);resize:none}
+.form input::placeholder,.form textarea::placeholder{font-style:italic;color:var(--grey)}
+.form .file{border:0;display:flex;gap:10px;align-items:center;cursor:pointer}
+.form .file input{display:none}
+.form .pd{border:0;padding:0;display:flex;gap:10px;align-items:flex-start;font:600 13px/18px "PN";cursor:pointer}
+.form .pd input{flex:none;width:16px;height:16px;margin:1px 0 0;accent-color:var(--ink);cursor:pointer}
+.form .pd a{text-decoration:none}
+.form .btn{align-self:flex-start;min-width:180px}
+.form .btn:disabled{opacity:.35;cursor:not-allowed}
+
+/* ===== подвал ===== */
+.foot{padding-top:var(--sec)}
+.foot .menu{border:0}
+.foot .big{margin:80px var(--page) 0}
+.foot .big img{width:100%}
+.foot .legal{display:flex;justify-content:space-between;padding:14px var(--page) 24px;color:var(--grey)}
+
+/* ===== ПРЕДЛОЖЕНИЕ 13.10: «Чертёж» (html.tN) =====
+   1. Голос логотипа: все заголовки — Bold КАПС одного размера (--disp), плотно.
+   2. Линия логотипа: ЗАГОЛОВОК ———————— кнопка, как РУМЯНЦЕВ ——— БЮРО.
+   3. Штамп чертежа: номер блока, цифры, единицы, RAL, N° — метка 12 КАПС, цифры одной ширины.
+   4. Один цвет: красный бюро #C12C2F (P3) — только блок «Как мы работаем».
+   5. Два полюса без середины: крупный капс ↔ текст 24 / 16 Regular / метка 12. */
+html.tN{--disp:clamp(36px,4.4vw,80px);--acc:#c12c2f}
+@supports (color:color(display-p3 1 1 1)){html.tN{--acc:color(display-p3 .757 .173 .184)}}
+html.tN body{font-weight:400;font-variant-numeric:lining-nums tabular-nums;counter-reset:blk}
+/* 1. заголовки */
+html.tN .t-h1,html.tN .t-num{font:700 var(--disp)/.92 "PN";letter-spacing:-.025em;text-transform:uppercase}
+/* 2. линия логотипа + 3. номер блока */
+html.tN .head{position:relative;align-items:flex-start;gap:0;counter-increment:blk}
+html.tN .head .t-h1{flex:none}
+html.tN .head::after{margin-left:var(--ml,calc(var(--disp)*.3))!important}
+/* как в логотипе: линия стоит по верхней кромке заглавных, толщина = 0,18 высоты заглавной (≈ штрих буквы) */
+html.tN .head::after{content:"";order:1;flex:1;height:calc(var(--disp)*.12);background:var(--ink);margin:calc(var(--disp)*.103) 0 0 calc(var(--disp)*.3);min-width:40px}
+html.tN .head .btn{order:2;align-self:flex-end;margin:0 0 calc(var(--disp)*.15) 24px}
+html.tN .head::before{content:counter(blk,decimal-leading-zero) " /";position:absolute;left:var(--page);top:calc(var(--sec) - 32px);font:600 12px/16px "PN";letter-spacing:.06em;color:var(--grey)}
+html.tN .about .t-h1{font-size:calc(var(--disp)*1.0)}
+/* текст */
+html.tN .t-h2,html.tN .t-h3{font:600 24px/28px "PN";letter-spacing:-.01em}
+html.tN .t-lead{font:400 24px/32px "PN";letter-spacing:-.005em}
+html.tN .t-body{font:400 16px/24px "PN"}
+html.tN .t-cap,html.tN .t-low,html.tN .chip,html.tN .btn{font:600 12px/16px "PN";text-transform:uppercase;letter-spacing:.06em}
+html.tN .t-low{color:var(--grey)}
+html.tN .chip{padding:8px 10px}
+html.tN .t-it{font:400 16px/24px "PN";color:var(--grey)}
+html.tN .form input,html.tN .form textarea{font:400 24px/32px "PN"}
+html.tN .form input::placeholder,html.tN .form textarea::placeholder,html.tN .ral::placeholder{font-style:normal}
+html.tN .ral{font:400 16px/24px "PN"}
+html.tN .cat .nm sup{font:600 12px/1 "PN";letter-spacing:.06em;top:1.2em}
+/* цифры: число крупно, единица — метка */
+html.tN .t-num u{text-decoration:none;font:600 12px/1 "PN";letter-spacing:.06em;margin-left:8px;vertical-align:top;position:relative;top:.35em}
+/* 4. один цветной блок */
+html.tN .head:has(+.how),html.tN .how{background:var(--acc);color:var(--w)}
+html.tN .head:has(+.how)::after{background:var(--w)}
+html.tN .head:has(+.how)::before{color:rgba(255,255,255,.6)}
+html.tN .how,html.tN .how .cell{border-color:rgba(255,255,255,.25)}
+html.tN .how .cell::after{border-color:var(--w)}
+html.tN .how .t-body{color:rgba(255,255,255,.75)}
+html.tN .how .cell{padding:24px var(--cell) 32px}  /* сверху меньше: у крупных цифр свой воздух над заглавными */
+html.tN .how .cell{display:flex;flex-direction:column;min-height:330px}
+html.tN .how .t-h3{margin-top:auto;padding-top:48px}
+html.tN .head:has(+.how)+.how+.head{margin-top:0}
+html.tN .news .t-h3{margin-top:8px}
+
+
+/* ===== Сжатый Proxima Nova Condensed: кнопки, чипы и цифры (html.cB). Заголовки — широкие, как логотип. */
+html.tN.cB .t-num{font-family:"PNCo";font-size:calc(var(--disp)*1.3);letter-spacing:-.01em}
+html.tN.cB .t-num u{font:600 15px/1 "PNCo";letter-spacing:.04em;top:.3em}
+html.tN.cB .btn,html.tN.cB .chip{font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase}
+html.tN.cB .chip{padding:7px 10px}
+/* цифры и коды тоже сжатым: номера блоков, даты, RAL, счётчики разделов */
+html.tN.cB .head::before,html.tN.cB .news .t-cap,html.tN.cB #ralN,html.tN.cB .cat .nm sup{font:600 15px/16px "PNCo";letter-spacing:.04em}
+
+/* 14.10: без Regular — текст Semibold и чёрный, подзаголовки Bold */
+html.tN body{font-weight:600}
+html.tN .t-h2,html.tN .t-h3{font-weight:600}
+html.tN .t-lead,html.tN .form input,html.tN .form textarea,html.tN .ral{font-weight:600}
+html.tN .t-lead{font-size:20px;line-height:30px;letter-spacing:0}
+html.tN .t-body,html.tN .t-it{font-weight:600;color:var(--ink)}
+html.tN .t-it{font-style:italic}
+html.tN .how .t-body{color:var(--w)}
+/* «Как мы работаем»: графит */
+html.tN .how{background:var(--ink)} /* 15.10: графит, только клетки */
+html.tN .head:has(+.how){background:none;color:var(--ink)}
+html.tN .head:has(+.how)::after{background:var(--ink)}
+html.tN .head:has(+.how)::before{color:var(--grey)}
+.cmp{position:fixed;left:16px;bottom:16px;z-index:50;display:flex;border:1px solid var(--ink);background:var(--w)}
+.cmp+.cmp{bottom:52px}
+.cmp+.cmp+.cmp{bottom:88px}
+.cmp+.cmp+.cmp+.cmp{bottom:124px}
+.cmp button{border:0;background:none;padding:8px 12px;cursor:pointer;font:700 12px "PN";text-transform:uppercase;letter-spacing:.04em}
+.cmp button.on{background:var(--ink);color:var(--w)}
+
+/* ===== АДАПТИВ 16.10: планшет ≤1024, телефон ≤640 ===== */
+html,body{overflow-x:clip}
+@media (max-width:1024px){
+  :root{--sec:112px}
+  .menu{grid-template-columns:repeat(3,1fr);row-gap:20px}
+  .head{flex-wrap:wrap}
+  html.tN .head .btn{flex:none;white-space:nowrap}
+  html.tN .head:has(.btn)::after{min-width:80px}
+  .about{grid-template-columns:1fr 1fr}
+  .about>.t-h1{grid-column:1/-1}.about>div{grid-column:2/3}
+  .start .cell{grid-template-columns:1fr 1fr;row-gap:12px}
+  .start .t-h2{grid-column:1}.start .t-body{grid-column:1;grid-row:2;max-width:none}
+  .start .btn{grid-column:2;grid-row:1/3}
+  .cat{gap:3vw;--H:min(30vw,48vh);height:auto;padding-top:96px;padding-bottom:96px}
+  .ralb .ralt{grid-template-columns:1fr 1fr}.ralb .ralt p{grid-column:2}
+  .ralb .rc{width:calc((100vw - 2 * var(--page)) / 3)}
+  .how{grid-template-columns:repeat(2,1fr)}
+  .how .cell:nth-child(2n){border-right:0}
+  html.tN .how .cell{min-height:260px}
+  .prj{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:30vw;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .prj::-webkit-scrollbar{display:none}
+  .prj .cell{scroll-snap-align:start}
+  .news1{grid-template-columns:1fr 1fr;height:auto}
+  .news1 .nt{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}
+  .news1 .np img{height:420px;flex:none}
+  .news1 .nv{min-height:520px}
+  .form{grid-template-columns:1fr}
+  .form>.t-h1,.form form{grid-column:1}
+  .form form{max-width:640px}
+}
+@media (max-width:640px){
+  :root{--page:16px;--cell:16px;--sec:80px;--head:28px}
+  html.tN{--disp:clamp(32px,9.6vw,44px)}
+  /* первый экран */
+  .hero{height:auto;aspect-ratio:3/4;min-height:0}
+  .hero .logo{top:20px}
+  .hero .slogan,.hero .cart{top:calc(20px + (100vw - 2 * var(--page)) * .0556 + 16px);font-size:13px;line-height:16px}
+  .menu{grid-template-columns:1fr 1fr;column-gap:16px;row-gap:18px}
+  .menu div:last-child{grid-column:1/-1}
+  /* заголовки: линия логотипа — отдельной строкой под длинным заголовком, кнопка во всю ширину */
+  .head{flex-wrap:wrap}
+  html.tN .head .t-h1{flex:0 1 auto;max-width:100%}
+  html.tN .head::after{flex:1 1 100%;margin:16px 0 0!important;height:calc(var(--disp)*.16)}
+  html.tN .head .btn{flex:1 1 100%;margin:24px 0 0;align-self:stretch}
+  html.tN .head::before{top:calc(var(--sec) - 28px)}
+  .about{grid-template-columns:1fr;row-gap:28px}
+  .about>div{grid-column:1}
+  html.tN .t-lead{font-size:18px;line-height:26px}
+  /* с чего начнём: столбиком, картинка за курсором не нужна */
+  .start .cell{grid-template-columns:1fr;padding:24px var(--page)}
+  .start .t-h2,.start .t-body,.start .btn{grid-column:1;grid-row:auto}
+  .start .btn{width:100%;margin-top:8px}
+  .start .cell img{display:none}
+  html.tN .t-h2,html.tN .t-h3{font-size:20px;line-height:24px}
+  /* каталог как у Acme: список разделов сверху, ниже предметы в ряд, по очереди закрашиваются */
+  .cat{grid-template-columns:.59fr 1.07fr .57fr .83fr;gap:2.4vw;--H:27vw;padding:var(--sec) var(--page) 0;align-content:start}
+  .cat .catl{display:flex;order:-1;grid-column:1/-1;margin-bottom:48px}
+  .cat .nm{display:none}
+  /* RAL */
+  .ralb .ralt{grid-template-columns:1fr;padding-bottom:28px}.ralb .ralt p{grid-column:1}
+  .ralb .rc{width:46vw;height:200px}
+  .ralb .rc i{width:84px;height:84px}
+  /* конструктор */
+  #cfg2 .stage{padding:0}
+  #cfg2 .row{grid-template-columns:1fr;padding-top:12px}
+  #cfg2 .row>label{margin-bottom:-6px}
+  #cfg2 .row>label br{display:none}
+  #cfg2 .cnt button{width:36px}
+  /* как мы работаем */
+  .how{grid-template-columns:1fr}
+  .how .cell{border-right:0}
+  html.tN .how .cell{min-height:0}
+  html.tN .how .t-h3{padding-top:32px}
+  /* проекты: лента со свайпом */
+  .prj{grid-auto-columns:64vw}
+  /* новость */
+  .news1{grid-template-columns:1fr}
+  .news1>div{border-right:0;border-bottom:1px solid var(--line)}.news1>div:last-child{border-bottom:0}
+  .news1 .np{padding:24px var(--page)}
+  .news1 .np img{height:320px}
+  .news1 .nv{min-height:0;aspect-ratio:4/5}
+  /* форма */
+  .form{row-gap:40px}
+  html.tN .form input,html.tN .form textarea{font-size:18px;line-height:26px}
+  .form .btn{width:100%}
+  .form .pd br{display:none}
+  /* подвал */
+  .foot .big{margin-top:56px}
+  .foot .legal{flex-direction:column;gap:8px}
+}
+
+/* общее для адаптива: мобильный логотип, подсказка 3D, автопоказ каталога на сенсорных экранах */
+.hero .logo .lm,.cat .catl,#cfg2 .view .ht{display:none}
+.cat .catl a{height:auto;padding:0}
+.cat .catl{flex-direction:column;align-items:center;font:700 var(--disp)/1 "PN";letter-spacing:-.025em;text-transform:uppercase}
+@media (hover:none){
+  #cfg2 .view .hm{display:none}#cfg2 .view .ht{display:inline}
+  .cat a.on .ph{opacity:1}.cat a.on .ln{opacity:0}
+}
+@media (max-width:640px){
+  .hero .logo img{display:none}.hero .logo .lm{display:block}
+  .cat .catl{display:flex}
+  .hero .slogan,.hero .cart{top:calc(20px + (100vw - 2 * var(--page)) * .2544 + 16px)}
+}
+
+
+/* ===== 16.10: общая шапка внутренних страниц ===== */
+.hdr{position:sticky;top:0;z-index:40;background:var(--w);transition:transform .25s}
+.hdr.up{transform:translateY(-100%)}
+.hdr.open{transform:none}
+.bar{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:center;height:56px;padding:0 var(--page);border-bottom:1px solid var(--line)}
+.bar .lg img{width:min(100%,240px);height:auto}
+.bar .nav{grid-column:2/4;display:flex;justify-content:space-between;gap:20px;white-space:nowrap}
+.bar .tel{white-space:nowrap}
+@media (max-width:1200px){.bar .nav{grid-column:2/5}.bar .tel{display:none}}
+.bar .tel{font:600 15px/16px "PNCo";letter-spacing:.04em}
+.bar .rt{grid-column:5;white-space:nowrap;display:flex;justify-content:flex-end;gap:28px;align-items:center}
+.bar a:hover,.bar button:hover{opacity:.5}
+.bar .cart b{font:600 15px/16px "PNCo";letter-spacing:.04em}
+.mbtn{display:flex;align-items:center;gap:10px;border:0;background:none;cursor:pointer;color:var(--ink)}
+.mbtn i{position:relative;width:12px;height:12px}
+.mbtn i::before,.mbtn i::after{content:"";position:absolute;left:0;top:5.25px;width:12px;height:1.5px;background:var(--ink);transition:transform .2s}
+.mbtn i::after{transform:rotate(90deg)}
+.hdr.open .mbtn i::after{transform:rotate(0)}
+.hdr .full{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease;background:var(--w)}
+.hdr .full>div{overflow:hidden}
+.hdr.open .full{grid-template-rows:1fr}
+.hdr .full .menu{padding:22px var(--page) 28px}
+.shade{position:fixed;inset:0;z-index:39;background:rgba(28,26,27,.25);opacity:0;pointer-events:none;transition:opacity .3s}
+.hdr.open+.shade{opacity:1;pointer-events:auto}
+/* текущий раздел */
+.bar .nav a.on{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+
+/* заглушка содержимого страницы */
+.stub{display:grid;grid-template-columns:repeat(4,1fr)}
+.stub .cell{padding:12px;display:flex;flex-direction:column;gap:6px}
+.stub .cell:nth-child(4n){border-right:0}
+.stub img{width:100%;aspect-ratio:4/5;object-fit:cover;margin-bottom:6px}
+.stub .t-cap{text-transform:none;letter-spacing:0;font-size:13px;color:var(--grey)}
+.crumbs{padding:20px var(--page) 0;color:var(--grey)}
+.crumbs+.head{padding-top:72px}
+html.tN .crumbs+.head::before{top:40px}
+
+/* подвал: реквизиты */
+.foot .legal{gap:24px;flex-wrap:wrap}
+.foot .legal span{font:600 15px/16px "PNCo";letter-spacing:.04em}
+.foot .legal .lnk{display:flex;gap:28px}
+.foot .legal a:hover{color:var(--ink)}
+
+/* метка черновика */
+.note{position:fixed;right:16px;bottom:16px;z-index:60;max-width:300px;padding:10px 12px;background:var(--ink);color:var(--w);font:600 13px/18px "PN"}
+
+/* ===== телефон ===== */
+@media (max-width:900px){
+  :root{--page:16px;--sec:96px}
+  .bar{grid-template-columns:1fr auto;height:52px}
+  .bar .rt{grid-column:auto}
+  .bar{gap:12px}.bar .lg img{width:150px}.bar .rt{gap:16px}
+  .bar .nav,.bar .tel{display:none}
+  .hdr .full{position:fixed;top:52px;left:0;right:0;bottom:0;grid-template-rows:1fr;transform:translateX(100%);transition:transform .3s ease;overflow:auto}
+  .hdr.open .full{transform:none}
+  .hdr .full .menu{grid-template-columns:1fr 1fr;gap:28px 16px;padding:24px var(--page) 40px;border:0}
+  .hdr .full .menu a{font-size:15px;line-height:24px}
+  /* телефон: о нас / доставка, каталог / проекты, контакты */
+  .menu div:nth-child(1){order:1}.menu div:nth-child(4){order:2}
+  .menu div:nth-child(2){order:3}.menu div:nth-child(3){order:4}
+  .menu div:nth-child(5){order:5;grid-column:1/3}
+  .stub{grid-template-columns:1fr 1fr}.stub .cell:nth-child(2n){border-right:0}
+  html.tN .head::after{min-width:24px}
+  .form{grid-template-columns:1fr;gap:40px}
+  .form>.t-h1,.form form{grid-column:1/-1}
+  .foot .menu{grid-template-columns:1fr 1fr;gap:28px 16px}
+  .foot .big{margin-top:56px}
+  .foot .legal{flex-direction:column;gap:10px}
+  .foot .legal .lnk{flex-direction:column;gap:10px}
+  .note{left:16px;right:16px;max-width:none}
+}
+
+/* ===== 20.10: страницы инструментов ===== */
+.intro{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:0 var(--page) 72px}
+.intro .t-lead{grid-column:1/3}
+.intro .bt{grid-column:4/6;display:flex;gap:12px;align-self:end}
+.intro .bt .btn{flex:1}
+body.bA .btn.ol{background:var(--w);color:var(--ink)}
+body.bA .btn.ol:hover{background:var(--ink);color:var(--w)}
+
+/* сетка инструментов: картинка-квадрат слева, название справа (как у Muuto) */
+.tools{grid-template-columns:repeat(4,1fr)}
+.tools .cell:nth-child(4n){border-right:0}
+.tools .cell{display:grid;grid-template-columns:40% 1fr;gap:16px;padding:12px}
+.tools .tx{display:flex;flex-direction:column;gap:8px;padding-top:2px}
+.tools .n{font:600 15px/16px "PNCo";letter-spacing:.04em;color:var(--grey)}
+.tools .t-h3{text-transform:uppercase;font-size:clamp(15px,1.25vw,20px);line-height:1.1;letter-spacing:0;hyphens:manual}
+.tools .t-body{font-size:14px;line-height:20px;color:var(--grey);margin-top:auto}
+.tools .cell:hover .t-h3{color:var(--acc)}
+.tools .t-body{opacity:0;transition:opacity .2s}
+.tools .cell:hover .t-body,.tools .cell:focus-visible .t-body{opacity:1}
+@media (hover:none){.tools .t-body{opacity:1}}
+.vis{position:relative;aspect-ratio:1/1;background:var(--fill);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.vis>img{width:100%;height:100%;object-fit:cover}
+.vis>img.ln{object-fit:contain;padding:10%;mix-blend-mode:multiply}
+.vis svg{width:62%;height:auto;stroke:var(--ink);stroke-width:1.5;fill:none;overflow:visible}
+.vis svg *{vector-effect:non-scaling-stroke}
+.vis.tl{aspect-ratio:5/6;background:none}
+.vis.tl>img{width:100%;height:100%;object-fit:cover}
+.vis.tl svg{stroke:none;width:100%;height:100%}   /* на Тильде схема встроена: без чужой обводки у фона */
+.vis>img.sch{width:62%;height:auto;object-fit:contain}
+.vis svg .sv{stroke:none;fill:var(--ink);font:600 9px 'PNCo';letter-spacing:.04em}
+.vis svg .sv.lg{font:700 22px 'PNCo'}
+.vis .big{font:700 clamp(40px,4.6vw,84px)/.85 "PNCo";letter-spacing:-.01em;text-align:center}
+.vis .big u{display:block;text-decoration:none;font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
+.vis.dk{background:var(--ink);color:var(--w)}
+.ralv{display:grid;grid-template-columns:repeat(3,1fr);gap:10%;width:70%}
+.ralv i{aspect-ratio:1;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.fabv{display:grid;grid-template-columns:1fr 1fr;width:100%;height:100%}
+.fabv img{width:100%;height:100%;object-fit:cover}
+
+/* строки-предложения под сеткой (как «С чего начнём» на главной) */
+.offer{margin-top:120px}
+
+/* таблица сроков */
+.term{grid-template-columns:2fr 1fr 1fr}
+.term .cell{padding:18px var(--cell);display:flex;align-items:baseline;gap:10px}
+.term .cell:nth-child(3n){border-right:0}
+.term .th{color:var(--grey)}
+.term .d{font:700 clamp(36px,3.6vw,64px)/.9 "PNCo";letter-spacing:-.01em}
+.term .d+span{font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase;color:var(--grey)}
+.term .r{font:600 24px/28px "PN";text-transform:uppercase}
+.termn{padding:16px var(--page) 0;color:var(--grey)}
+
+/* вопросы */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:center;min-height:72px;padding:0 var(--page);cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .t-h3{grid-column:1/4}
+.faq summary i{grid-column:5;justify-self:end;position:relative;width:12px;height:12px}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;top:5.25px;width:12px;height:1.5px;background:var(--ink);transition:transform .2s}
+.faq summary i::after{transform:rotate(90deg)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq summary:hover .t-h3{color:var(--acc)}
+.faq details>p{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:0 var(--page) 28px}
+.faq details>p span{grid-column:1/4;max-width:640px}
+
+@media (max-width:1024px){
+  .intro{grid-template-columns:1fr 1fr}.intro .t-lead{grid-column:1/-1}.intro .bt{grid-column:1/-1}
+  .tools{grid-template-columns:repeat(2,1fr)}
+  .tools .cell:nth-child(4n){border-right:1px solid var(--line)}
+  .tools .cell:nth-child(2n){border-right:0}
+  .faq summary .t-h3,.faq details>p span{grid-column:1/5}
+}
+@media (max-width:640px){
+  .intro{grid-template-columns:1fr;padding-bottom:48px}.intro .bt{flex-direction:column}.intro .bt .btn{flex:none}
+  .tools{grid-template-columns:1fr}
+  .tools .cell{border-right:0!important;grid-template-columns:38% 1fr}
+  .tools .t-h3{font-size:18px;line-height:20px}
+  .vis .big{font-size:48px}
+  .offer{margin-top:80px}
+  .term{grid-template-columns:1.4fr 1fr 1fr}
+  .term .r{font-size:16px;line-height:20px}
+  .term .cell{flex-direction:column;gap:4px;padding:14px 12px}
+  .faq summary{grid-template-columns:1fr 12px;min-height:64px}
+  .faq summary .t-h3{grid-column:1;font-size:18px;line-height:22px}.faq summary i{grid-column:2}
+  .faq details>p{grid-template-columns:1fr}.faq details>p span{grid-column:1}
+}
+
+/* ===== внутренние страницы 20.10 ===== */
+.crumbs a:hover{color:var(--ink)}
+.bar2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:0 var(--page) 24px}
+.chip{border:1px solid var(--line);background:none;cursor:pointer;color:var(--ink);padding:7px 10px;font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase}
+.chip:hover{border-color:var(--ink)}.chip.on{background:var(--ink);color:var(--w);border-color:var(--ink)}
+.srch{margin-left:auto;min-width:260px;border:0;border-bottom:1px solid var(--ink);padding:8px 0;font:600 16px "PN";outline:none;background:none}
+.cnt{color:var(--grey);font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase}
+.models{grid-template-columns:repeat(4,1fr)}
+.models .cell{padding:12px;display:flex;flex-direction:column;gap:8px}
+.models .cell:nth-child(4n){border-right:0}
+.models .pv{aspect-ratio:1;background:var(--fill);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.models .pv img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.models .t-h3{text-transform:uppercase;font-size:18px;line-height:20px}
+.models .sz{font:600 15px/16px "PNCo";letter-spacing:.04em;color:var(--grey)}
+.fm{display:flex;flex-wrap:wrap;gap:4px}
+.fm i{font:600 13px/14px "PNCo";letter-spacing:.04em;text-transform:uppercase;font-style:normal;border:1px solid var(--line);padding:3px 5px}
+.models .lk{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.models .lk .btn{flex:1;height:36px}
+.models .lk .btn.ol{flex:none}
+.big2{grid-template-columns:repeat(4,1fr)}
+.big2 .cell{padding:var(--cell) var(--cell) 28px;display:flex;flex-direction:column;gap:10px;min-height:220px}
+.big2 .cell:nth-child(4n){border-right:0}
+.big2 .t-num{margin-bottom:auto}
+.big2.c2{grid-template-columns:repeat(2,1fr)}.big2.c2 .cell:nth-child(2n){border-right:0}
+.big2.c3{grid-template-columns:repeat(3,1fr)}.big2.c3 .cell:nth-child(3n){border-right:0}
+.base{grid-template-columns:repeat(7,1fr)}
+.base .cell{padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.base .cell:nth-child(7n){border-right:0}
+.base i{width:min(110px,80%);aspect-ratio:1;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.code{font:600 15px/16px "PNCo";letter-spacing:.04em;text-transform:uppercase}
+.base .t-body{font-size:14px;line-height:18px;color:var(--grey)}
+.allral{grid-template-columns:repeat(10,1fr)}
+.allral .cell{padding:10px;display:flex;flex-direction:column;gap:8px}
+.allral .cell:nth-child(10n){border-right:0}
+.allral i{aspect-ratio:1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.fab{grid-template-columns:repeat(6,1fr)}
+.fab .cell{padding:10px;display:flex;flex-direction:column;gap:8px}
+.fab .cell:nth-child(6n){border-right:0}
+.fab img{width:100%;aspect-ratio:1;object-fit:cover}
+.fab{grid-template-columns:repeat(8,1fr)}.fab .cell:nth-child(6n){border-right:1px solid var(--line)}.fab .cell:nth-child(8n){border-right:0}
+.fab .cell .t-body{font-size:13px;line-height:16px;color:var(--grey);margin-top:-4px}
+.fab .cov{grid-column:span 2;grid-row:span 2;padding:10px}.fab .cov img{aspect-ratio:auto;height:100%}
+.fh{align-items:flex-end;flex-wrap:wrap}.fh>div:first-child{display:flex;flex-direction:column;gap:6px}
+.spec{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:flex-end;max-width:70%}
+.kv{display:flex;flex-direction:column;gap:2px;font:600 14px/18px "PN"}.kv b{font:600 12px/16px "PN";letter-spacing:.06em;text-transform:uppercase;color:var(--grey);font-weight:600}
+.fcol[hidden],.fab .cell[hidden]{display:none}
+.fams{gap:6px;padding-top:0}
+.dot{display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:none;cursor:pointer;color:var(--ink);padding:6px 10px 6px 7px;font:600 14px/16px "PN"}
+.dot:hover{border-color:var(--ink)}.dot.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.dot i{width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+/* правая линия у всех клеток, крайняя справа срезается — так неполный последний ряд тоже закрыт линией */
+.models .cell,.allral .cell,.fab .cell,.base .cell{border-right:1px solid var(--line)!important}
+.models,.allral,.fab,.base{clip-path:inset(0 1px 0 0)}
+.models{grid-template-columns:repeat(4,minmax(0,1fr))}.models .cell{min-width:0}.models .lk .btn{gap:8px;min-width:0}
+@media (max-width:1024px){.models{grid-template-columns:repeat(2,minmax(0,1fr))}.fab{grid-template-columns:repeat(5,minmax(0,1fr))}.spec{max-width:100%;justify-content:flex-start}}
+@media (max-width:640px){
+  .models .lk .btn.ol{display:none}.models .lk .btn{padding:0 10px}.models .t-h3{font-size:15px;line-height:17px}.fm i{font-size:11px;padding:2px 4px}
+  .fab{grid-template-columns:repeat(3,minmax(0,1fr))}.fab .cov{grid-column:1/-1;grid-row:auto}.fab .cov img{aspect-ratio:16/10;height:auto}
+  .fh{flex-direction:column;align-items:flex-start}.spec{gap:10px 18px}
+}
+.sub-h{padding:56px var(--page) 16px;display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.sub-h .t-h2{text-transform:uppercase}
+.rows{border-top:1px solid var(--line)}
+.rows a,.rows div.r{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;align-items:center;min-height:72px;padding:12px var(--page);border-bottom:1px solid var(--line)}
+.rows .t-h3{grid-column:1/3}.rows .t-body{grid-column:3/5;color:var(--grey)}
+.rows .btn{grid-column:5;justify-self:end;width:220px}
+.rows .btn.off{background:var(--fill)!important;color:var(--grey)!important;border-color:var(--line)!important;cursor:default}
+.rows a:hover .t-h3{color:var(--acc)}
+.rows.pl .t-body{grid-column:3/6;color:var(--ink)}
+.about.ab .t-lead+.t-lead,.about.ab .t-lead+.t-body{margin-top:1em}.about.ab .t-body{color:var(--grey)}
+.bar2 a.chip{display:inline-block}
+.txt{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:0 var(--page)}
+.txt>div{grid-column:1/4;display:flex;flex-direction:column;gap:14px;max-width:760px}
+.form select{display:block;width:100%;border:0;outline:none;background:none;margin-top:8px;font:600 24px/32px "PN";color:var(--ink);appearance:none}
+@media (max-width:1024px){
+  .models{grid-template-columns:repeat(2,1fr)}.models .cell:nth-child(4n){border-right:1px solid var(--line)}.models .cell:nth-child(2n){border-right:0}
+  .big2{grid-template-columns:repeat(2,1fr)}.big2 .cell:nth-child(4n){border-right:1px solid var(--line)}.big2 .cell:nth-child(2n){border-right:0}
+  .base{grid-template-columns:repeat(4,1fr)}.base .cell:nth-child(7n){border-right:1px solid var(--line)}.base .cell:nth-child(4n){border-right:0}
+  .allral{grid-template-columns:repeat(6,1fr)}.allral .cell:nth-child(10n){border-right:1px solid var(--line)}.allral .cell:nth-child(6n){border-right:0}
+  .fab{grid-template-columns:repeat(4,1fr)}.fab .cell:nth-child(6n){border-right:1px solid var(--line)}.fab .cell:nth-child(4n){border-right:0}
+  .rows .t-h3{grid-column:1/4}.rows .t-body{grid-column:1/4;grid-row:2}.rows .btn{grid-row:1/3;grid-column:4/6}
+  .txt>div{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .srch{margin-left:0;min-width:0;width:100%}
+  .models{grid-template-columns:1fr 1fr}
+  .big2,.big2.c3,.big2.c2{grid-template-columns:1fr}.big2 .cell{border-right:0!important;min-height:0}
+  .base{grid-template-columns:repeat(2,1fr)}.base .cell:nth-child(4n){border-right:1px solid var(--line)}.base .cell:nth-child(2n){border-right:0}
+  .allral{grid-template-columns:repeat(4,1fr)}.allral .cell:nth-child(6n){border-right:1px solid var(--line)}.allral .cell:nth-child(4n){border-right:0}
+  .fab{grid-template-columns:repeat(3,1fr)}.fab .cell:nth-child(4n){border-right:1px solid var(--line)}.fab .cell:nth-child(3n){border-right:0}
+  .rows a,.rows div.r{grid-template-columns:1fr}.rows .t-h3,.rows .t-body,.rows .btn{grid-column:1;grid-row:auto;justify-self:stretch;width:auto}
+  .form select{font-size:18px;line-height:26px}
+}
+</style>
+</head>
+<body class="bA">
+<header class="hdr" id="hdr">
+  <div class="bar t-cap">
+    <a class="lg" href="https://r-bureau.ru/"><img src="assets/img/logo_ru.svg" alt="Румянцев Бюро"></a>
+    <nav class="nav"><a href="https://r-bureau.ru/catalogue">Каталог</a><a href="https://r-bureau.ru/project">Проекты</a><a class="on" href="https://r-bureau.ru/designers">Дизайнерам</a><a href="https://r-bureau.ru/business">Бизнесу</a><a href="https://r-bureau.ru/#about">О нас</a></nav>
+    <div class="rt"><button class="mbtn t-cap" id="mbtn" aria-expanded="false">Меню <i></i></button></div>
+  </div>
+  <div class="full"><div><nav class="menu t-cap">
+  <div><a href="https://r-bureau.ru/#about">О нас</a><a href="https://r-bureau.ru/#about">Производство</a></div>
+  <div><a href="https://r-bureau.ru/catalogue">Каталог</a><a href="https://r-bureau.ru/catalogue#chairs">Стулья</a><a href="https://r-bureau.ru/catalogue#tables">Столы</a><a href="https://r-bureau.ru/catalogue#benches">Лавочки</a><a href="https://r-bureau.ru/catalogue#storage">Хранение</a></div>
+  <div><a href="https://r-bureau.ru/project">Проекты</a><a href="./">3D-модели</a><a href="https://r-bureau.ru/designers">Дизайнерам</a><a href="https://r-bureau.ru/business">Бизнесу</a></div>
+  <div><a href="https://r-bureau.ru/info#delivery">Доставка</a><a href="https://r-bureau.ru/info#warranty">Гарантия</a><a href="https://r-bureau.ru/info#care">Уход за мебелью</a></div>
+  <div><a href="https://r-bureau.ru/#contacts">Контакты</a><a href="tel:+79875599267">+7 (987) 559-92-67</a><a href="mailto:info@r-bureau.ru">info@r-bureau.ru</a><span class="ms"><a href="https://t.me/r_bureau">Telegram</a><a href="https://wa.me/79875599267">WhatsApp</a><a href="https://max.ru/u/f9LHodD0cOJ5-k0gBk_-Z7PsANu0dZgd0vIovRw4280a0Yn5k63bYujwMIQ">MAX</a></span></div>
+</nav></div></div>
+</header>
+<div class="shade" id="shade"></div>
+<p class="crumbs t-cap"><a href="https://r-bureau.ru/">Главная</a> / <a href="https://r-bureau.ru/designers">Дизайнерам</a> / 3D-модели и чертежи</p>
+<div class="head"><h1 class="t-h1">3D-МОДЕЛИ<br>И ЧЕРТЕЖИ</h1></div>
+<section class="intro"><p class="t-lead">Все модели — бесплатно, по одной или одним архивом. Размеры сверены с изделиями.</p><div class="bt"><a class="btn" href="https://github.com/valeriatverdokhleb-a11y/3d.r-bureau.ru/releases/latest/download/r-bureau-3d-all.zip">Скачать все <span>→</span></a><a class="btn ol" href="https://r-bureau.ru/catalogue">Каталог мебели <span>→</span></a></div></section>
+<div class="bar2"><button class="chip on" data-k="all">Все</button><button class="chip" data-k="chairs">Стулья</button><button class="chip" data-k="tables">Столы</button><button class="chip" data-k="benches">Лавочки</button><button class="chip" data-k="storage">Хранение</button><span class="cnt" id="cnt">34 моделей</span><input class="srch" id="q" placeholder="Поиск по названию"></div><section class="cells models" id="grid"><div class="cell" data-c="chairs" data-n="дуга s"><a class="pv" href="duga-s/"><img loading="lazy" src="duga-s/thumb.jpg" alt=""></a><span class="t-h3">Дуга S</span><span class="sz">630 × 500 × 460 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="duga-s/rb_chair_duga_S.zip">Скачать <span>↓</span></a><a class="btn ol" href="duga-s/">3D</a></span></div><div class="cell" data-c="chairs" data-n="дуга m"><a class="pv" href="duga-m/"><img loading="lazy" src="duga-m/thumb.jpg" alt=""></a><span class="t-h3">Дуга M</span><span class="sz">750 × 570 × 570 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="duga-m/rb_chair_duga_M.zip">Скачать <span>↓</span></a><a class="btn ol" href="duga-m/">3D</a></span></div><div class="cell" data-c="chairs" data-n="дуга l"><a class="pv" href="duga-l/"><img loading="lazy" src="duga-l/thumb.jpg" alt=""></a><span class="t-h3">Дуга L</span><span class="sz">920 × 550 × 470 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="duga-l/rb_chair_duga_L.zip">Скачать <span>↓</span></a><a class="btn ol" href="duga-l/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент"><a class="pv" href="element/"><img loading="lazy" src="element/thumb.jpg" alt=""></a><span class="t-h3">Элемент</span><span class="sz">850 × 500 × 460 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element/rb_chair_element.zip">Скачать <span>↓</span></a><a class="btn ol" href="element/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент софт"><a class="pv" href="element-soft/"><img loading="lazy" src="element-soft/thumb.jpg" alt=""></a><span class="t-h3">Элемент софт</span><span class="sz">850 × 500 × 460 мм</span><span class="fm"><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-soft/rb_chair_element_soft.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-soft/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент с подлокотниками"><a class="pv" href="element-arm/"><img loading="lazy" src="element-arm/thumb.jpg" alt=""></a><span class="t-h3">Элемент с подлокотниками</span><span class="sz">850 × 560 × 550 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-arm/rb_chair_element_arm.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-arm/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент софт с подлокотниками"><a class="pv" href="element-arm-soft/"><img loading="lazy" src="element-arm-soft/thumb.jpg" alt=""></a><span class="t-h3">Элемент софт с подлокотниками</span><span class="sz">850 × 560 × 550 мм</span><span class="fm"><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-arm-soft/rb_chair_element_arm_soft.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-arm-soft/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент барный"><a class="pv" href="element-bar/"><img loading="lazy" src="element-bar/thumb.jpg" alt=""></a><span class="t-h3">Элемент барный</span><span class="sz">1100 × 500 × 460 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-bar/rb_chair_element_bar.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-bar/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент софт барный"><a class="pv" href="element-bar-soft/"><img loading="lazy" src="element-bar-soft/thumb.jpg" alt=""></a><span class="t-h3">Элемент софт барный</span><span class="sz">1100 × 500 × 460 мм</span><span class="fm"><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-bar-soft/rb_chair_element_bar_soft.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-bar-soft/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент с подлокотниками барный"><a class="pv" href="element-bar-arm/"><img loading="lazy" src="element-bar-arm/thumb.jpg" alt=""></a><span class="t-h3">Элемент с подлокотниками барный</span><span class="sz">1100 × 560 × 550 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-bar-arm/rb_chair_element_bar_arm.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-bar-arm/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент софт с подлокотниками барный"><a class="pv" href="element-bar-arm-soft/"><img loading="lazy" src="element-bar-arm-soft/thumb.jpg" alt=""></a><span class="t-h3">Элемент софт с подлокотниками барный</span><span class="sz">1100 × 560 × 550 мм</span><span class="fm"><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="element-bar-arm-soft/rb_chair_element_bar_arm_soft.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-bar-arm-soft/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент x repanel"><a class="pv" href="element-plastic/"><img loading="lazy" src="element-plastic/thumb.jpg" alt=""></a><span class="t-h3">Элемент x Repanel</span><span class="sz">850 × 500 × 460 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i><i>skp</i></span><span class="lk"><a class="btn" href="element-plastic/rb_chair_element_plastic.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-plastic/">3D</a></span></div><div class="cell" data-c="chairs" data-n="элемент барный x repanel"><a class="pv" href="element-bar-plastic/"><img loading="lazy" src="element-bar-plastic/thumb.jpg" alt=""></a><span class="t-h3">Элемент барный x Repanel</span><span class="sz">1100 × 500 × 460 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i><i>skp</i></span><span class="lk"><a class="btn" href="element-bar-plastic/rb_chair_element_bar_plastic.zip">Скачать <span>↓</span></a><a class="btn ol" href="element-bar-plastic/">3D</a></span></div><div class="cell" data-c="chairs" data-n="стул без названия"><a class="pv" href="chair-noname/"><img loading="lazy" src="chair-noname/thumb.jpg" alt=""></a><span class="t-h3">Стул без названия</span><span class="sz">800 × 500 × 450 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="chair-noname/rb_chair_noname.zip">Скачать <span>↓</span></a><a class="btn ol" href="chair-noname/">3D</a></span></div><div class="cell" data-c="chairs" data-n="стул без названия барный"><a class="pv" href="chair-noname-bar/"><img loading="lazy" src="chair-noname-bar/thumb.jpg" alt=""></a><span class="t-h3">Стул без названия барный</span><span class="sz">1100 × 500 × 450 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="chair-noname-bar/rb_chair_noname_bar.zip">Скачать <span>↓</span></a><a class="btn ol" href="chair-noname-bar/">3D</a></span></div><div class="cell" data-c="chairs" data-n="табурет без названия"><a class="pv" href="stool-noname/"><img loading="lazy" src="stool-noname/thumb.jpg" alt=""></a><span class="t-h3">Табурет без названия</span><span class="sz">465 × 450 × 450 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="stool-noname/rb_stool_noname.zip">Скачать <span>↓</span></a><a class="btn ol" href="stool-noname/">3D</a></span></div><div class="cell" data-c="chairs" data-n="табурет без названия барный"><a class="pv" href="stool-noname-bar/"><img loading="lazy" src="stool-noname-bar/thumb.jpg" alt=""></a><span class="t-h3">Табурет без названия барный</span><span class="sz">750 × 450 × 450 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="stool-noname-bar/rb_stool_noname_bar.zip">Скачать <span>↓</span></a><a class="btn ol" href="stool-noname-bar/">3D</a></span></div><div class="cell" data-c="chairs" data-n="угол"><a class="pv" href="chair-ugol/"><img loading="lazy" src="chair-ugol/thumb.jpg" alt=""></a><span class="t-h3">Угол</span><span class="sz">790 × 490 × 430 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="chair-ugol/rb_chair_ugol.zip">Скачать <span>↓</span></a><a class="btn ol" href="chair-ugol/">3D</a></span></div><div class="cell" data-c="chairs" data-n="василий ковёр"><a class="pv" href="vasily-rug/"><img loading="lazy" src="vasily-rug/thumb.jpg" alt=""></a><span class="t-h3">Василий ковёр</span><span class="sz">650 × 760 × 760 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="vasily-rug/rb_vasily_rug.zip">Скачать <span>↓</span></a><a class="btn ol" href="vasily-rug/">3D</a></span></div><div class="cell" data-c="tables" data-n="стол «6» круг"><a class="pv" href="table-6-600/"><img loading="lazy" src="table-6-600/thumb.jpg" alt=""></a><span class="t-h3">Стол «6» Круг</span><span class="sz">750 × ⌀500–700 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-6-600/rb_table_6.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-6-600/">3D</a></span></div><div class="cell" data-c="tables" data-n="стол «11» круг"><a class="pv" href="table-11-600/"><img loading="lazy" src="table-11-600/thumb.jpg" alt=""></a><span class="t-h3">Стол «11» Круг</span><span class="sz">750 × ⌀500–700 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-11-600/rb_tables_6-11.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-11-600/">3D</a></span></div><div class="cell" data-c="tables" data-n="стол «6» круг x repanel"><a class="pv" href="table-6-plastic/"><img loading="lazy" src="table-6-plastic/thumb.jpg" alt=""></a><span class="t-h3">Стол «6» Круг x Repanel</span><span class="sz">750 × ⌀500–700 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i><i>skp</i></span><span class="lk"><a class="btn" href="table-6-plastic/rb_table_6_plastic.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-6-plastic/">3D</a></span></div><div class="cell" data-c="tables" data-n="журнальный столик"><a class="pv" href="table-coffee/"><img loading="lazy" src="table-coffee/thumb.jpg" alt=""></a><span class="t-h3">Журнальный столик</span><span class="sz">420 × 750 × 750 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-coffee/rb_table_coffee.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-coffee/">3D</a></span></div><div class="cell" data-c="tables" data-n="кофейный столик прямоугольный"><a class="pv" href="table-coffee-rectangle/"><img loading="lazy" src="table-coffee-rectangle/thumb.jpg" alt=""></a><span class="t-h3">Кофейный столик прямоугольный</span><span class="sz">450 × 350 × 800 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-coffee-rectangle/rb_coffeetable_solid_rectangle.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-coffee-rectangle/">3D</a></span></div><div class="cell" data-c="tables" data-n="кофейный столик квадратный"><a class="pv" href="table-coffee-square/"><img loading="lazy" src="table-coffee-square/thumb.jpg" alt=""></a><span class="t-h3">Кофейный столик квадратный</span><span class="sz">450 × 400 × 400 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-coffee-square/rb_coffeetable_solid_square.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-coffee-square/">3D</a></span></div><div class="cell" data-c="tables" data-n="круглый столик подвесной"><a class="pv" href="table-coffee-susp-circle/"><img loading="lazy" src="table-coffee-susp-circle/thumb.jpg" alt=""></a><span class="t-h3">Круглый столик подвесной</span><span class="sz">500 × 400 × 400 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-coffee-susp-circle/rb_coffeetable_susp_circle.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-coffee-susp-circle/">3D</a></span></div><div class="cell" data-c="tables" data-n="прямоугольный столик подвесной"><a class="pv" href="table-coffee-susp-rect/"><img loading="lazy" src="table-coffee-susp-rect/thumb.jpg" alt=""></a><span class="t-h3">Прямоугольный столик подвесной</span><span class="sz">500 × 250 × 400 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-coffee-susp-rect/rb_coffeetable_susp_rect.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-coffee-susp-rect/">3D</a></span></div><div class="cell" data-c="tables" data-n="стол на трёх ножках"><a class="pv" href="table-tripod/"><img loading="lazy" src="table-tripod/thumb.jpg" alt=""></a><span class="t-h3">Стол на трёх ножках</span><span class="sz">750 × 700 × 700 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="table-tripod/rb_table_tripod.zip">Скачать <span>↓</span></a><a class="btn ol" href="table-tripod/">3D</a></span></div><div class="cell" data-c="benches" data-n="лавочка 2"><a class="pv" href="bench-2/"><img loading="lazy" src="bench-2/thumb.jpg" alt=""></a><span class="t-h3">Лавочка 2</span><span class="sz">450 × 420 × 1300 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="bench-2/rb_bench_2.zip">Скачать <span>↓</span></a><a class="btn ol" href="bench-2/">3D</a></span></div><div class="cell" data-c="benches" data-n="лавочка 2 со столиком"><a class="pv" href="bench-2-table/"><img loading="lazy" src="bench-2-table/thumb.jpg" alt=""></a><span class="t-h3">Лавочка 2 со столиком</span><span class="sz">690 × 420 × 1300 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="bench-2-table/rb_bench_2_table.zip">Скачать <span>↓</span></a><a class="btn ol" href="bench-2-table/">3D</a></span></div><div class="cell" data-c="benches" data-n="скамья без названия"><a class="pv" href="bench-noname/"><img loading="lazy" src="bench-noname/thumb.jpg" alt=""></a><span class="t-h3">Скамья без названия</span><span class="sz">800 × 500 × 1300 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="bench-noname/rb_bench_noname.zip">Скачать <span>↓</span></a><a class="btn ol" href="bench-noname/">3D</a></span></div><div class="cell" data-c="benches" data-n="лавочка без названия"><a class="pv" href="bench-noname-backless/"><img loading="lazy" src="bench-noname-backless/thumb.jpg" alt=""></a><span class="t-h3">Лавочка без названия</span><span class="sz">460 × 450 × 1300 мм</span><span class="fm"><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="bench-noname-backless/rb_bench_noname_backless.zip">Скачать <span>↓</span></a><a class="btn ol" href="bench-noname-backless/">3D</a></span></div><div class="cell" data-c="storage" data-n="тележка"><a class="pv" href="cart/"><img loading="lazy" src="cart/thumb.jpg" alt=""></a><span class="t-h3">Тележка</span><span class="sz">950 × 480 × 760 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="cart/rb_cart.zip">Скачать <span>↓</span></a><a class="btn ol" href="cart/">3D</a></span></div><div class="cell" data-c="storage" data-n="тумбочка"><a class="pv" href="tumbochka/"><img loading="lazy" src="tumbochka/thumb.jpg" alt=""></a><span class="t-h3">Тумбочка</span><span class="sz">410 × 380 × 380 мм</span><span class="fm"><i>max</i><i>fbx</i><i>3ds</i><i>obj</i><i>dwg</i></span><span class="lk"><a class="btn" href="tumbochka/rb_tumbochka.zip">Скачать <span>↓</span></a><a class="btn ol" href="tumbochka/">3D</a></span></div></section><div class="head"><h2 class="t-h1">Вопросы</h2></div><section class="faq"><details><summary><span class="t-h3">Какие форматы в архиве?</span><i></i></summary><p><span class="t-body">FBX, OBJ, 3DS и DWG у всех моделей, у большинства — ещё 3ds Max (Corona). У моделей x Repanel — ещё SketchUp. Какие форматы в архиве, видно на карточке.</span></p></details><details><summary><span class="t-h3">Модели совпадают с реальной мебелью?</span><i></i></summary><p><span class="t-body">Да, размеры сверены с изделиями. Если нужна модификация под проект — напишите, пришлём.</span></p></details><details><summary><span class="t-h3">Нужен Revit?</span><i></i></summary><p><span class="t-body">Пока нет. Напишите, для какой модели — сделаем в приоритете.</span></p></details></section><script>
+const chips=[...document.querySelectorAll('.chip')],cards=[...document.querySelectorAll('#grid .cell')],q=document.getElementById('q'),cnt=document.getElementById('cnt');
+let cat='all';const go=()=>{const v=q.value.trim().toLowerCase();let k=0;cards.forEach(c=>{const ok=(cat==='all'||c.dataset.c===cat)&&(!v||c.dataset.n.includes(v));c.hidden=!ok;if(ok)k++});cnt.textContent=k+' '+(k%10==1&&k%100!=11?'модель':(k%10>=2&&k%10<=4&&(k%100<10||k%100>=20)?'модели':'моделей'))};
+chips.forEach(b=>b.onclick=()=>{chips.forEach(x=>x.classList.toggle('on',x===b));cat=b.dataset.k;go()});q.oninput=go;
+</script>
+
+<footer class="foot">
+  <nav class="menu t-cap">
+  <div><a href="https://r-bureau.ru/#about">О нас</a><a href="https://r-bureau.ru/#about">Производство</a></div>
+  <div><a href="https://r-bureau.ru/catalogue">Каталог</a><a href="https://r-bureau.ru/catalogue#chairs">Стулья</a><a href="https://r-bureau.ru/catalogue#tables">Столы</a><a href="https://r-bureau.ru/catalogue#benches">Лавочки</a><a href="https://r-bureau.ru/catalogue#storage">Хранение</a></div>
+  <div><a href="https://r-bureau.ru/project">Проекты</a><a href="./">3D-модели</a><a href="https://r-bureau.ru/designers">Дизайнерам</a><a href="https://r-bureau.ru/business">Бизнесу</a></div>
+  <div><a href="https://r-bureau.ru/info#delivery">Доставка</a><a href="https://r-bureau.ru/info#warranty">Гарантия</a><a href="https://r-bureau.ru/info#care">Уход за мебелью</a></div>
+  <div><a href="https://r-bureau.ru/#contacts">Контакты</a><a href="tel:+79875599267">+7 (987) 559-92-67</a><a href="mailto:info@r-bureau.ru">info@r-bureau.ru</a><span class="ms"><a href="https://t.me/r_bureau">Telegram</a><a href="https://wa.me/79875599267">WhatsApp</a><a href="https://max.ru/u/f9LHodD0cOJ5-k0gBk_-Z7PsANu0dZgd0vIovRw4280a0Yn5k63bYujwMIQ">MAX</a></span></div>
+</nav>
+  <div class="big"><img src="assets/img/logo_ru.svg" alt="Румянцев Бюро"></div>
+  <div class="legal t-cap">
+    <span>ИП · ИНН 525612625438 · ОГРНИП 324527500030414</span>
+    <span>Нижний Новгород, ул. Варварская, 32</span>
+    <div class="lnk"><a href="https://r-bureau.ru/">Политика конфиденциальности</a><a href="https://r-bureau.ru/">Договор оферты</a></div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.getElementById('hdr'),mb=document.getElementById('mbtn');
+const tog=v=>{hdr.classList.toggle('open',v);mb.setAttribute('aria-expanded',v);mb.firstChild.textContent=v?'Закрыть ':'Меню '};
+mb.onclick=()=>tog(!hdr.classList.contains('open'));
+document.getElementById('shade').onclick=()=>tog(false);
+addEventListener('keydown',e=>{if(e.key==='Escape')tog(false)});
+// при прокрутке вниз шапка прячется, вверх — появляется
+let y0=scrollY;addEventListener('scroll',()=>{const y=scrollY;if(!hdr.classList.contains('open'))hdr.classList.toggle('up',y>y0&&y>120);y0=y},{passive:true});
+// согласие на ПДн включает кнопку
+const ok=document.getElementById('pdOk'),sd=document.getElementById('send');if(ok)ok.onchange=()=>sd.disabled=!ok.checked;
+</script>
+</body>
 </html>

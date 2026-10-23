@@ -481,3 +481,24 @@ fetch("../assets/cfg/cfg.json")
   .catch((error) => {
     console.error("Failed to load configuration for model-viewer:", error);
   });
+
+// Шапка как на сайте r-bureau.ru (23.10.2026): логотип, «Все 3D-модели», название и кнопка «Скачать»
+(() => {
+  const name = document.title.split(' — ')[0];
+  const top = document.createElement('div');
+  top.className = 'rb-top';
+  top.innerHTML = '<a href="https://r-bureau.ru/"><img src="../assets/img/logo_ru.svg" alt="Румянцев Бюро"></a><a class="rb-back" href="../">← Все 3D-модели</a>';
+  document.body.prepend(top);
+  const h = document.createElement('h1');
+  h.className = 'rb-name';
+  h.textContent = name;
+  document.body.append(h);
+  const file = document.body.dataset.zip;   // имя архива рядом со страницей — <body data-zip="…">
+  if (file) {
+    const a = document.createElement('a');
+    a.className = 'rb-dl';
+    a.href = file;
+    a.innerHTML = 'Скачать <span>↓</span>';
+    document.body.append(a);
+  }
+})();
