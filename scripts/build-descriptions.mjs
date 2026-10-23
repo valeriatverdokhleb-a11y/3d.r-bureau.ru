@@ -198,6 +198,14 @@ const main = async () => {
     }
   }
 
+  // ручные размеры для моделей без своей страницы на сайте (перекрывают скачанные)
+  try {
+    const manual = JSON.parse(
+      await fs.readFile(path.join(ROOT, "assets", "data", "descriptions-manual.json"), "utf8"),
+    );
+    Object.assign(result.items, manual);
+  } catch {}
+
   await fs.mkdir(path.dirname(outPath), { recursive: true });
   await fs.writeFile(outPath, JSON.stringify(result, null, 2) + "\n", "utf8");
 
